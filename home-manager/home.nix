@@ -50,11 +50,6 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".gitconfig".text = ''
-        [user]
-          name = Mayank Sharma
-          email = ms36527@gmail.com
-    '';
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
