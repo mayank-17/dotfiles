@@ -1,0 +1,7 @@
+# Ignore everything
+*
+
+# But don't ignore this folder
+!home-manager/
+!home-manager/**
+

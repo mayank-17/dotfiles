@@ -63,6 +63,17 @@
     # '';
   };
 
+  programs.git = {
+    enable = true;
+    userName  = "mayank-17";
+    userEmail = "ms36527@gmail.com";
+
+    extraConfig = {
+      credential.helper = "store";
+    };
+  };
+
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
