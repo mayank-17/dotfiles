@@ -2,6 +2,10 @@
 
 {
   imports = [
+    ./shell/bash.nix
+    ./others/git.nix
+    ./others/starship.nix
+    ./others/zoxide.nix
     ./shell/zsh.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -29,6 +33,14 @@
     nerdfonts
     jetbrains.idea-community
     openjdk17
+    zoxide
+    ulauncher
+    maven
+    kubectl
+    kubectx
+    nodejs
+    ollama
+    docker-compose
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -57,17 +69,6 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-
-  programs.git = {
-    enable = true;
-    userName  = "mayank-17";
-    userEmail = "ms36527@gmail.com";
-
-    extraConfig = {
-      credential.helper = "store";
-    };
-  };
-
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
