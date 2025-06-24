@@ -3,6 +3,8 @@
 {
   imports = [
     ./shell/bash.nix
+    ./others/direnv.nix
+    ./others/fzf.nix
     ./others/git.nix
     ./others/starship.nix
     ./others/zoxide.nix
@@ -28,6 +30,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # hello
+    bat
     neofetch
     jq
     nerdfonts
@@ -41,6 +44,12 @@
     nodejs
     ollama
     docker-compose
+    taskwarrior3
+    lazydocker
+    magic-wormhole
+    uv
+    fzf
+    direnv
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
