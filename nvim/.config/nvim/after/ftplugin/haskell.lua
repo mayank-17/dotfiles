@@ -16,3 +16,14 @@ vim.keymap.set("n", "<leader>rf", function()
   ht.repl.toggle(vim.api.nvim_buf_get_name(0))
 end, opts)
 vim.keymap.set("n", "<leader>rq", ht.repl.quit, opts)
+
+-- Disable formatting when the haskell LSP attaches
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.name == "haskell-tools.nvim" then
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
+    end
+  end,
+})
