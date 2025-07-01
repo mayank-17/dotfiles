@@ -11,8 +11,8 @@ vim.keymap.set(
 
 local opts = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap("n", "<C-;>", "<C-w><", opts) -- Alt+h to shrink width
-vim.api.nvim_set_keymap("n", "<C-'>", "<C-w>>", opts) -- Alt+l to grow width
+vim.api.nvim_set_keymap("n", "<A-;>", "<C-w><", opts) -- Alt+h to shrink width
+vim.api.nvim_set_keymap("n", "<A-'>", "<C-w>>", opts) -- Alt+l to grow width
 
 vim.keymap.set("n", "<leader>tp", function()
   if require("precognition").toggle() then
