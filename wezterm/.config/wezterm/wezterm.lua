@@ -30,6 +30,14 @@ config.keys = {
 	{ key = "LeftArrow", mods = "CTRL", action = wezterm.action({ SendString = "\x1bb" }) }, -- ESC + b = backward-word
 	{ key = "RightArrow", mods = "CTRL", action = wezterm.action({ SendString = "\x1bf" }) }, -- ESC + f = forward-word
 	{ key = "V", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
+	{
+		key = "k",
+		mods = "CMD",
+		action = wezterm.action.Multiple({
+			wezterm.action.ClearScrollback("ScrollbackAndViewport"),
+			wezterm.action.SendKey({ key = "L", mods = "CTRL" }),
+		}),
+	},
 }
 
 -- config.font = wezterm.font("FiraCode Nerd Font", { weight = "Medium" })

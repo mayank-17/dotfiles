@@ -6,7 +6,7 @@ require("config.which-key")
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   callback = function()
-    vim.wo.wrap = true
+    vim.o.wrap = true
   end,
 })
 

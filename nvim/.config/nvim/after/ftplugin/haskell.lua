@@ -27,3 +27,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "haskell",
+  callback = function()
+    vim.b.autoformat = false
+    vim.opt_local.fixeol = false
+  end,
+})
