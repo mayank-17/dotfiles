@@ -462,7 +462,15 @@ return {
         -- Note: Use bzl LSP or Bazel language server
 
         -- Nix
-        nil_ls = {},
+        nil_ls = {
+          settings = {
+            ["nil"] = {
+              formatting = {
+                command = { "nixpkgs-fmt" },
+              },
+            },
+          },
+        },
 
         -- Dhall
         dhall_lsp_server = {},

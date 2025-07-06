@@ -30,6 +30,8 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # hello
+    nil
+    nixpkgs-fmt
     bat
     neofetch
     jq
