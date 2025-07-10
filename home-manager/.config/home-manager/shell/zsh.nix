@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -13,7 +12,7 @@
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-      
+
       mystow() {
         stow --target="$HOME" -Rv "$@" 2>&1 | grep -vE "BUG in find_stowed_path|/nix/store"
       }
@@ -21,7 +20,8 @@
     '';
     shellAliases = {
       ls = "ls -lah";
-      nix-dotfiles-sync = "(cd $HOME/.config/home-manager && nix run nixpkgs#home-manager -- switch)";
+      nix-dotfiles-sync =
+        "(cd $HOME/.config/home-manager && nix run nixpkgs#home-manager -- switch)";
       gco = "git checkout";
       tmux = "tmux -u";
       reload = "exec zsh";
@@ -38,7 +38,7 @@
 
     initExtra = ''
       # Save history on exit
-      trap 'builtin history -a; builtin history -r' EXIT
+      # trap 'builtin history -a; builtin history -r' EXIT
     '';
   };
 }
