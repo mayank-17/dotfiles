@@ -26,3 +26,20 @@ vim.keymap.set("n", "<leader>tl", function()
     load_template(template_name)
   end
 end, { desc = "Load template by name" })
+
+vim.api.nvim_create_autocmd("QuitPre", {
+  callback = function()
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.bo[buf].buftype == "terminal" then
+        -- get job id attached to terminal buffer
+        local job_id = vim.b[buf].terminal_job_id
+        if job_id and vim.fn.jobwait({ job_id }, 0)[1] == -1 then
+          -- job is still running, kill it
+          vim.fn.jobstop(job_id)
+        end
+        -- then delete buffer
+        vim.api.nvim_buf_delete(buf, { force = true })
+      end
+    end
+  end,
+})

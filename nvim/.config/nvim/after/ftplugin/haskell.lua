@@ -18,20 +18,20 @@ end, opts)
 vim.keymap.set("n", "<leader>rq", ht.repl.quit, opts)
 
 -- Disable formatting when the haskell LSP attaches
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client and client.name == "haskell-tools.nvim" then
-      client.server_capabilities.documentFormattingProvider = false
-      client.server_capabilities.documentRangeFormattingProvider = false
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "haskell",
-  callback = function()
-    vim.b.autoformat = false
-    vim.opt_local.fixeol = false
-  end,
-})
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   callback = function(args)
+--     local client = vim.lsp.get_client_by_id(args.data.client_id)
+--     if client and client.name == "haskell-tools.nvim" then
+--       client.server_capabilities.documentFormattingProvider = false
+--       client.server_capabilities.documentRangeFormattingProvider = false
+--     end
+--   end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "haskell",
+--   callback = function()
+--     vim.b.autoformat = false
+--     vim.opt_local.fixeol = false
+--   end,
+-- })

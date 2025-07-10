@@ -169,12 +169,18 @@ return {
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
+              -- Cargo project settings
               cargo = {
                 allFeatures = true,
                 loadOutDirsFromCheck = true,
                 runBuildScripts = true,
+                buildScripts = {
+                  enable = true,
+                },
               },
+              -- Enhanced checking
               checkOnSave = {
+                enable = true,
                 allFeatures = true,
                 command = "clippy",
                 extraArgs = { "--no-deps" },
@@ -182,7 +188,6 @@ return {
             },
           },
         },
-
         -- Go
         gopls = {
           settings = {

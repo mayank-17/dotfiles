@@ -17,7 +17,7 @@
       mystow() {
         stow --target="$HOME" -Rv "$@" 2>&1 | grep -vE "BUG in find_stowed_path|/nix/store"
       }
-
+      printf '\e[5 q'
     '';
     shellAliases = {
       ls = "ls -lah";

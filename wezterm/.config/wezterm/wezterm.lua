@@ -51,6 +51,22 @@ config.enable_tab_bar = false
 -- For example, changing the color scheme:
 config.color_scheme = "Gruvbox Dark (Gogh)"
 
+-- Cursor style when focused
+config.default_cursor_style = "BlinkingBar"
+config.cursor_blink_rate = 400 -- blink rate in milliseconds (default is 1200)
+-- options: "BlinkingBlock", "SteadyBlock", "BlinkingUnderline", "SteadyUnderline", "BlinkingBar", "SteadyBar"
+
+-- local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+-- custom.background = "#11111b"
+-- custom.tab_bar.background = "#040404"
+-- custom.tab_bar.inactive_tab.bg_color = "#0f0f0f"
+-- custom.tab_bar.new_tab.bg_color = "#080808"
+--
+-- config.color_schemes = {
+-- 	["OLEDppuccin"] = custom,
+-- }
+-- config.color_scheme = "OLEDppuccin"
+
 -- This event is fired when the GUI starts up
 wezterm.on("gui-startup", function(cmd)
 	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
