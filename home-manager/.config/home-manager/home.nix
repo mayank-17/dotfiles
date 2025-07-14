@@ -35,7 +35,7 @@
     bat
     neofetch
     jq
-    nerdfonts
+    nerd-fonts.jetbrains-mono
     jetbrains.idea-community
     openjdk17
     zoxide
@@ -44,7 +44,7 @@
     kubectl
     kubectx
     nodejs
-    ollama
+    # ollama
     docker-compose
     taskwarrior3
     lazydocker
@@ -55,6 +55,7 @@
     lazygit
     rustup
     go
+    gemini-cli
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -102,8 +103,24 @@
   #
   home.sessionVariables = {
     LANG = "en_US.UTF-8";
+    KUBECONFIG = "$HOME/.kube/config";
   };
 
+  # For PATH, it's even better to use home.sessionPath
+  # because it handles appending/prepending automatically.
+  home.sessionPath = [
+    "/home/linuxbrew/.linuxbrew/bin"
+    "/home/linuxbrew/.linuxbrew/sbin"
+    "/home/mayank/.nvm/versions/node/v20.17.0/bin"
+    "/home/mayank/.cabal/bin"
+    "/home/mayank/.ghcup/bin"
+    "/home/mayank/bin"
+    "/home/mayank/.local/bin"
+    "/home/mayank/.local/bin/lib/9.4.8"
+    # You might want to remove the standard /usr/local/bin etc. from here
+    # and let the default PATH handle them, or explicitly manage them.
+    # If they are already in the system PATH, no need to duplicate them here.
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

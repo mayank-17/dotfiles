@@ -1,9 +1,19 @@
 -- Bootstrap lazy.nvim, LazyVim, and your plugins
 
 vim.opt.termguicolors = true
-
+-- vim.g.gitblame_display_virtual_text = 0
 require("config.lazy")
 require("config.which-key")
+
+local original_fn = vim.fn.system
+vim.fn.system = function(cmd, ...)
+  if type(cmd) == "string" and cmd:match("git") then
+    print("Executing git command:", cmd)
+  elseif type(cmd) == "table" then
+    print("Executing command:", vim.inspect(cmd))
+  end
+  return original_fn(cmd, ...)
+end
 
 -- Enable line wrap for all buffers on BufEnter event
 vim.api.nvim_create_autocmd("BufEnter", {

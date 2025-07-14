@@ -43,3 +43,7 @@ vim.api.nvim_create_autocmd("QuitPre", {
     end
   end,
 })
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {
+  fg = "#615a55",
+  italic = true,
+})

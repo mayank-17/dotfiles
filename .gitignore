@@ -5,3 +5,4 @@
 !home-manager/
 !home-manager/**
 
+home-manager/.config/home-manager/shell/.zsh_secrets

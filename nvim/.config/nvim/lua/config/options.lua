@@ -4,3 +4,4 @@
 vim.opt.winbar = "%=%m %f"
 vim.opt.showtabline = 0
 vim.opt.scrolloff = 999
+vim.opt.wrap = true
