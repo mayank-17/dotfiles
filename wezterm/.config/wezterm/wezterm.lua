@@ -52,7 +52,8 @@ config.enable_scroll_bar = true
 config.enable_tab_bar = false
 -- For example, changing the color scheme:
 config.color_scheme = "Gruvbox Dark (Gogh)"
-
+config.color_scheme = "catppuccin-mocha"
+config.colors = { background = "#1c1c1c" }
 -- Cursor style when focused
 config.default_cursor_style = "BlinkingBar"
 config.cursor_blink_rate = 400 -- blink rate in milliseconds (default is 1200)

@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.starship = {
     enable = true;
-    settings = pkgs.lib.importTOML ./starship.toml;
+    settings = pkgs.lib.importTOML ./catppuccin-starship.toml;
   };
 }
