@@ -1,9 +1,11 @@
-// Ultra-Minimal Zellij Configuration - NO BORDERS
-// Converted from tmux configuration
+// Zellij Configuration - NO BORDERS
+// Ultra-minimal with Gruvbox theme
 
 keybinds clear-defaults=true {
     normal {
         bind "Ctrl a" { SwitchToMode "tmux"; }
+        bind "Shift Left" { MoveFocusOrTab "Left"; }
+        bind "Shift Right" { MoveFocusOrTab "Right"; }
     }
 
     tmux {
@@ -86,21 +88,6 @@ keybinds clear-defaults=true {
     renametab {
         bind "Ctrl c" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenameTab; SwitchToMode "Normal"; }
-    }
-
-    shared_except "normal" {
-        bind "Enter" "Esc" { SwitchToMode "Normal"; }
-    }
-
-    shared_except "tmux" {
-        bind "Ctrl a" { SwitchToMode "Tmux"; }
-    }
-}
-
-keybinds {
-    normal {
-        bind "Shift Left" { MoveFocusOrTab "Left"; }
-        bind "Shift Right" { MoveFocusOrTab "Right"; }
     }
 }
 
