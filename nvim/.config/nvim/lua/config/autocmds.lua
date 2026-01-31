@@ -17,7 +17,7 @@ end
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "haskell", "markdown", "sql" },
   callback = function()
-    vim.b.autoformat = false,
+    vim.b.autoformat = false
     vim.opt_local.fixeol = false
   end
 })
