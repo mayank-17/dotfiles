@@ -4,21 +4,30 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.initial_rows = 100
-config.initial_cols = 150
+-- config.window_background_image = "/home/mayank/Pictures/goku-blurred.jpg"
+
+-- Optional: tweak how the image appears
+config.window_background_image_hsb = {
+	brightness = 0.1, -- reduce brightness so text stands out
+	hue = 1.0,
+	saturation = 1.0,
+}
+
+-- ✅ Set opacity for transparency (this is what you're missing)
+config.window_background_opacity = 1.0 -- keep window solid
+
+config.enable_wayland = false
 
 config.force_reverse_video_cursor = true
 
 -- This is where you actually apply your config choices
 
-config = {
-	window_decorations = "TITLE|RESIZE",
-	font_size = 16,
-	hide_tab_bar_if_only_one_tab = false,
-	tab_bar_at_bottom = true,
-	use_fancy_tab_bar = false,
-	tab_and_split_indices_are_zero_based = false,
-}
+config.window_decorations = "TITLE|RESIZE"
+config.font_size = 16
+config.hide_tab_bar_if_only_one_tab = false
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
+config.tab_and_split_indices_are_zero_based = false
 
 config.window_padding = {
 	left = 3,
@@ -44,7 +53,6 @@ config.keys = {
 
 -- config.font = wezterm.font("FiraCode Nerd Font", { weight = "Medium" })
 config.font = wezterm.font("JetBrains Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
-config.window_background_opacity = 1
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
 config.enable_scroll_bar = true

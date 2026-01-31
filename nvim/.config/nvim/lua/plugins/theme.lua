@@ -9,6 +9,7 @@ return {
     local is_linux = vim.loop.os_uname().sysname == "Linux"
 
     require("catppuccin").setup({
+      transparent_background = true,
       flavour = "mocha", -- latte, frappe, macchiato, mocha
       color_overrides = {
         mocha = {

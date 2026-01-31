@@ -36,16 +36,16 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_mauve)'
-vimcmd_replace_symbol = '[](bold fg:color_mauve)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+success_symbol = '[](fg:color_green)'
+error_symbol = '[](fg:color_red)'
+vimcmd_symbol = '[](fg:color_green)'
+vimcmd_replace_one_symbol = '[](fg:color_mauve)'
+vimcmd_replace_symbol = '[](fg:color_mauve)'
+vimcmd_visual_symbol = '[](fg:color_yellow)'
 
 [os]
 disabled = false
-style = "bg:red fg:base bold"
+style = "bg:red fg:base"
 
 [os.symbols]
 Windows = "󰍲"
@@ -71,91 +71,91 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:red fg:base bold"
-style_root = "bg:red fg:base bold"
+style_user = "bg:red fg:base"
+style_root = "bg:red fg:base"
 format = '[ $user]($style)'
 
 [directory]
-style = "bg:peach fg:base bold"
+style = "bg:peach fg:base"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:yellow bold"
-format = '[[ $symbol $branch ](fg:base bg:yellow bold)]($style)'
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:base bg:yellow)]($style)'
 
 [git_status]
-style = "bg:yellow bold"
-format = '[[($all_status$ahead_behind )](fg:base bg:yellow bold)]($style)'
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:base bg:yellow)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:green bold"
-format = '[[ $symbol( $version) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
 
 [c]
 symbol = " "
-style = "bg:green bold"
-format = '[[ $symbol( $version) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:green bold"
-format = '[[ $symbol( $version) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:green bold"
-format = '[[ $symbol( $version) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
 
 [php]
 symbol = ""
-style = "bg:green bold"
-format = '[[ $symbol( $version) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
 
 [java]
 symbol = " "
-style = "bg:green bold"
-format = '[[ $symbol( $version) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:green bold"
-format = '[[ $symbol( $version) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:green bold"
-format = '[[ $symbol( $version) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
 
 [python]
 symbol = ""
-style = "bg:green bold"
-format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:base bg:green bold)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:base bg:green)]($style)'
 
 [docker_context]
 symbol = ""
-style = "bg:sapphire bold"
-format = '[[ $symbol( $context) ](fg:base bg:sapphire bold)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:base bg:sapphire)]($style)'
 
 [conda]
 symbol = "  "
-style = "fg:base bg:sapphire bold"
+style = "fg:base bg:sapphire"
 format = '[$symbol$environment ]($style)'
 ignore_base = false
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:lavender bold"
-format = '[[  $time ](fg:base bg:lavender bold)]($style)'
+style = "bg:lavender"
+format = '[[  $time ](fg:base bg:lavender)]($style)'
 
 [kubernetes]
 disabled = false
 symbol = "☸"
-style = "fg:base bg:sapphire bold"
+style = "fg:base bg:sapphire"
 format = '[ $symbol $context( \($namespace\))]($style)'
 
 [nix_shell]
@@ -165,7 +165,7 @@ pure_msg = 'pure'
 unknown_msg = 'unknown'
 symbol = " "
 format = '[ $symbol $state( \($name\)) ]($style)'
-style = "fg:base bg:sapphire bold"
+style = "fg:base bg:sapphire"
 
 [palettes.catppuccin]
 rosewater = "#dc8a78"

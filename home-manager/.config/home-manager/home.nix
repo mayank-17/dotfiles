@@ -30,6 +30,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # hello
+    k3d
     nil
     nixpkgs-fmt
     bat
@@ -43,8 +44,7 @@
     maven
     kubectl
     kubectx
-    nodejs
-    # ollama
+    nodejs_22
     docker-compose
     taskwarrior3
     lazydocker
@@ -56,6 +56,16 @@
     rustup
     go
     gemini-cli
+    ccache
+    bottom
+    lld_20
+    llvmPackages_20.libcxxClang
+    glibc
+    glibc.dev
+    zellij
+    xclip
+    # alacritty
+    # nixVulkanNvidia
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -117,10 +127,14 @@
     "/home/mayank/bin"
     "/home/mayank/.local/bin"
     "/home/mayank/.local/bin/lib/9.4.8"
+    "/home/mayank/.cargo/bin"
+
     # You might want to remove the standard /usr/local/bin etc. from here
     # and let the default PATH handle them, or explicitly manage them.
     # If they are already in the system PATH, no need to duplicate them here.
   ];
+
+  # nixpkgs.config.allowUnfree = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

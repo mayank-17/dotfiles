@@ -1,0 +1,138 @@
+// Ultra-Minimal Zellij Configuration - NO BORDERS
+// Converted from tmux configuration
+
+keybinds clear-defaults=true {
+    normal {
+        bind "Ctrl a" { SwitchToMode "tmux"; }
+    }
+
+    tmux {
+        bind "o" { LaunchOrFocusPlugin "session-manager" { floating true; }; SwitchToMode "Normal"; }
+        bind "d" { Detach; }
+        bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
+        bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
+        bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+        bind "c" { NewTab; SwitchToMode "Normal"; }
+        bind "," { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
+        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
+        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+        bind "[" { SwitchToMode "Resize"; }
+        bind "PageUp" { SwitchToMode "Scroll"; }
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "Ctrl c" { SwitchToMode "Normal"; }
+    }
+
+    resize {
+        bind "h" "Left" { Resize "Increase Left"; }
+        bind "j" "Down" { Resize "Increase Down"; }
+        bind "k" "Up" { Resize "Increase Up"; }
+        bind "l" "Right" { Resize "Increase Right"; }
+        bind "H" { Resize "Decrease Left"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "L" { Resize "Decrease Right"; }
+        bind "=" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+        bind "Esc" { SwitchToMode "Normal"; }
+    }
+
+    scroll {
+        bind "e" { EditScrollback; SwitchToMode "Normal"; }
+        bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
+        bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+        bind "Ctrl f" "PageDown" { PageScrollDown; }
+        bind "Ctrl b" "PageUp" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "Esc" { SwitchToMode "Normal"; }
+    }
+
+    search {
+        bind "Ctrl c" "Esc" { ScrollToBottom; SwitchToMode "Normal"; }
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+        bind "Ctrl f" "PageDown" { PageScrollDown; }
+        bind "Ctrl b" "PageUp" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "n" { Search "down"; }
+        bind "p" { Search "up"; }
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+    }
+
+    entersearch {
+        bind "Ctrl c" "Esc" { SwitchToMode "Scroll"; }
+        bind "Enter" { SwitchToMode "Search"; }
+    }
+
+    renametab {
+        bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Esc" { UndoRenameTab; SwitchToMode "Normal"; }
+    }
+
+    shared_except "normal" {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+    }
+
+    shared_except "tmux" {
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
+    }
+}
+
+keybinds {
+    normal {
+        bind "Shift Left" { MoveFocusOrTab "Left"; }
+        bind "Shift Right" { MoveFocusOrTab "Right"; }
+    }
+}
+
+themes {
+    gruvbox-dark {
+        fg 213 196 161
+        bg 40 40 40
+        black 60 56 54
+        red 251 73 52
+        green 184 187 38
+        yellow 250 189 47
+        blue 131 165 152
+        magenta 211 134 155
+        cyan 142 192 124
+        white 235 219 178
+        orange 254 128 25
+        gray 146 131 116
+    }
+}
+
+theme "gruvbox-dark"
+pane_frames false
+simplified_ui false
+mouse_mode true
+copy_on_select true
+scroll_buffer_size 1000000
+copy_clipboard "system"
+default_shell "zsh"
+session_serialization true
+serialize_pane_viewport true
+scrollback_lines_to_serialize 1000
+mirror_session false
+on_force_close "quit"
+default_mode "normal"
+auto_layout true

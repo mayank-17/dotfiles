@@ -18,6 +18,8 @@
       gco = "git checkout";
       tmux = "tmux -u";
       reload = "exec zsh";
+      pbcopy= "xclip -selection clipboard";
+      pbpaste = "xclip -selection clipboard -o";
     };
 
     history = {

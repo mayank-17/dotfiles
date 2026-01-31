@@ -5,6 +5,13 @@ vim.opt.termguicolors = true
 require("config.lazy")
 require("config.which-key")
 
+require("autoformat-toggle").setup({
+  default_enabled = false, -- Start with autoformat disabled
+  toggle_key = "<leader>tf", -- Custom toggle key
+  status_key = "<leader>ts", -- Custom status key
+  show_messages = true, -- Show on/off messages
+})
+
 -- Enable line wrap for all buffers on BufEnter event
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
