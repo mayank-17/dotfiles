@@ -14,6 +14,14 @@ local function load_template(template_name)
   end
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "haskell", "markdown", "sql" },
+  callback = function()
+    vim.b.autoformat = false,
+    vim.opt_local.fixeol = false
+  end
+})
+
 -- Key mappings for different templates
 -- vim.keymap.set('n', '<leader>tp', function() load_template('python') end, { desc = 'Load Python template' })
 -- vim.keymap.set('n', '<leader>th', function() load_template('html') end, { desc = 'Load HTML template' })
